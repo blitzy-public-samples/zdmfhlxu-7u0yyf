@@ -1,0 +1,14 @@
+# Use an official Node.js runtime as the base image
+FROM node:14-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Install dependencies using Yarn
+RUN yarn install
+
+# Specify the command to run on container start
+CMD ["yarn", "start"]
